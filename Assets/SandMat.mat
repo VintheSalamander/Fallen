@@ -51,16 +51,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BlendOpacity: 0.5
-    - _GradientScale: 10
-    - _NormalStr: 0.01
+    - _BlendOpacity: 0.13
+    - _Float: 2.7
+    - _GradientScale: 7.88
+    - _NormalStr: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SineFrequency: 3.24
-    - _UVRotation: 53.42
-    - _UVScale: 2.8
+    - _SineFrequency: 5
+    - _UVRotation: 0.59
+    - _UVScale: 7.4
     m_Colors:
-    - _Color: {r: 0.042869255, g: 0.7830724, b: 0.8415094, a: 0}
-    - _Color_1: {r: 0.14542526, g: 0.47767353, b: 0.8113207, a: 0}
-    - _RadialStr: {r: 2, g: 2, b: 0, a: 0}
+    - _Color: {r: 0.25164112, g: 0.55340874, b: 0.5773585, a: 1}
+    - _Color_1: {r: 0.06420079, g: 0.27172306, b: 0.4792453, a: 1}
+    - _RadialStr: {r: 9.83, g: 0.93, b: 0, a: 0}
+    - _Tiling: {r: 6, g: 4.5, b: 0, a: 0}
   m_BuildTextureStacks: []

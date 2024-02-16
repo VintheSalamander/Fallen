@@ -12,14 +12,12 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-        float yMovement = ySpeed * Time.deltaTime;
-        Vector3 movement = new Vector3(horizontalInput, yMovement, verticalInput) * moveSpeed * Time.deltaTime;
+        float yMovement = ySpeed * Time.fixedDeltaTime;
+        Vector3 movement = new Vector3(horizontalInput * moveSpeed, yMovement, verticalInput * moveSpeed) * Time.deltaTime;
         rb.MovePosition(rb.position + movement);
     }
 }
-

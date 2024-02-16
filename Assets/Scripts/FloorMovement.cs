@@ -15,7 +15,10 @@ public class FloorMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float yMovement = ySpeed * Time.deltaTime;
-        transform.Translate(Vector3.up * yMovement);
+        
+    }
+
+    void OnCollisionEnter(Collision col){
+        Debug.Log("Player entered the trigger!");
     }
 }

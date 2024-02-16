@@ -52,17 +52,17 @@ Material:
     m_Ints: []
     m_Floats:
     - _BlendOpacity: 0.13
-    - _Float: 2.7
-    - _GradientScale: 7.88
+    - _Float: 7.26
+    - _GradientScale: 9.5
     - _NormalStr: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SineFrequency: 5
-    - _UVRotation: 0.59
+    - _UVRotation: 0.88
     - _UVScale: 7.4
     m_Colors:
     - _Color: {r: 0.25164112, g: 0.55340874, b: 0.5773585, a: 1}
     - _Color_1: {r: 0.06420079, g: 0.27172306, b: 0.4792453, a: 1}
-    - _RadialStr: {r: 9.83, g: 0.93, b: 0, a: 0}
-    - _Tiling: {r: 6, g: 4.5, b: 0, a: 0}
+    - _RadialStr: {r: 10.29, g: 1.81, b: 0, a: 0}
+    - _Tiling: {r: 5, g: 5, b: 0, a: 0}
   m_BuildTextureStacks: []

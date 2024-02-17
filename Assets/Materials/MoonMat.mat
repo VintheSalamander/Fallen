@@ -61,5 +61,5 @@ Material:
     - _Deep_Color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 0}
     - _NearColor: {r: 0.3207547, g: 0.29515964, b: 0.2947312, a: 0}
     - _RadialStr: {r: 1.22, g: 16.99, b: 0, a: 0}
-    - _Tiling: {r: 6, g: 6, b: 0, a: 0}
+    - _Tiling: {r: 9, g: 9, b: 0, a: 0}
   m_BuildTextureStacks: []

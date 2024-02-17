@@ -27,11 +27,12 @@ public class GameModeController : MonoBehaviour
     public void ChangeEnviroment(){
         if(isDeepSea){
             SetSpace();
-        }
-        if(isSpace){
+        }else if(isSpace){
             SetDeepSea();
         }
         round += 1;
+        enemyController.DestroyEnemies();
+        enemyController.SpawnEnemies();
     }
 
     void SetDeepSea(){

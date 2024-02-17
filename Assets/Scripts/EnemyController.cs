@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     public float[] zPosRange = new float[2];
     public int initialEnemyCount;
     public int enemyRoundIncrement;
+    private GameObject enemyParent;
 
     // Start is called before the first frame update
     void Start()
@@ -26,32 +27,30 @@ public class EnemyController : MonoBehaviour
     }
 
     public void SpawnEnemies(){
-        int Enemies = initialEnemyCount + enemyRoundIncrement * GameModeController.GetRound();
+        GameObject enemiesParent = new GameObject("EnemiesParent");
+        enemyParent = enemiesParent;
+        GameObject enemyPrefab;
+
         if(GameModeController.GetIsDeepSea()){
-            while (Enemies > 0){
-                float xPos = Random.Range(xPosRange[0], xPosRange[1]);
-                float yPos = Random.Range(yPosRange[0], yPosRange[1]);
-                float zPos = Random.Range(zPosRange[0], zPosRange[1]);
-
-                Instantiate(enemyDeepSea, new Vector3(xPos, yPos, zPos), Quaternion.identity);
-                Enemies -= 1;
-            }
+            enemyPrefab = enemyDeepSea;
+        }else if(GameModeController.GetIsSpace()){
+            enemyPrefab = enemySpace;
+        }else{
+            enemyPrefab = null;
         }
+        int Enemies = initialEnemyCount + enemyRoundIncrement * GameModeController.GetRound();
+        while (Enemies > 0){
+            float xPos = Random.Range(xPosRange[0], xPosRange[1]);
+            float yPos = Random.Range(yPosRange[0], yPosRange[1]);
+            float zPos = Random.Range(zPosRange[0], zPosRange[1]);
 
-        if(GameModeController.GetIsSpace()){
-            while (Enemies > 0){
-                float xPos = Random.Range(xPosRange[0], xPosRange[1]);
-                float yPos = Random.Range(yPosRange[0], yPosRange[1]);
-                float zPos = Random.Range(zPosRange[0], zPosRange[1]);
-
-                Instantiate(enemySpace, new Vector3(xPos, yPos, zPos), Quaternion.identity);
-                Enemies -= 1;
-            }
+            Instantiate(enemyPrefab, new Vector3(xPos, yPos, zPos), Quaternion.identity, enemiesParent.transform);
+            Enemies -= 1;
         }
-        
     }
 
-    public void SetEnemy(){
-        
+    public void DestroyEnemies(){
+        Destroy(enemyParent);
+        enemyParent = null;
     }
 }

@@ -20,4 +20,8 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(horizontalInput * moveSpeed, yMovement, verticalInput * moveSpeed) * Time.deltaTime;
         rb.MovePosition(rb.position + movement);
     }
+
+    public void Explode(){
+        Debug.Log("Player dead");
+    }
 }

@@ -7,6 +7,7 @@ public class GameModeController : MonoBehaviour
     public GameObject DeepSea;
     public GameObject Space;
     public EnemyController enemyController;
+    public PlayerController playerController;
     static bool isDeepSea;
     static bool isSpace;
     static int round;
@@ -40,6 +41,7 @@ public class GameModeController : MonoBehaviour
         Space.SetActive(false);
         isDeepSea = true;
         isSpace = false;
+        playerController.ChangeShipToDeepSea();
     }
 
     void SetSpace(){
@@ -47,6 +49,7 @@ public class GameModeController : MonoBehaviour
         Space.SetActive(true);
         isDeepSea = false;
         isSpace = true;
+        playerController.ChangeShipToSpace();
     }
 
     public static bool GetIsDeepSea(){

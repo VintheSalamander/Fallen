@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject submarine;
+    public GameObject spaceship;
     public float moveSpeed = 20f;
     public float ySpeed = -10f;
 
@@ -10,6 +12,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        submarine.SetActive(true);
+        spaceship.SetActive(false);
     }
 
     void FixedUpdate()
@@ -23,5 +27,15 @@ public class PlayerController : MonoBehaviour
 
     public void Explode(){
         Debug.Log("Player dead");
+    }
+
+    public void ChangeShipToDeepSea(){
+        submarine.SetActive(true);
+        spaceship.SetActive(false);
+    }
+
+    public void ChangeShipToSpace(){
+        submarine.SetActive(false);
+        spaceship.SetActive(true);
     }
 }

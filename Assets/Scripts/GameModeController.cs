@@ -13,7 +13,7 @@ public class GameModeController : MonoBehaviour
     static int round;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         round = 0;
         SetDeepSea();

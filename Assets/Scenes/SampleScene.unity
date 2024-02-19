@@ -5118,6 +5118,9 @@ MonoBehaviour:
   spaceship: {fileID: 1088256657}
   moveSpeed: 2
   ySpeed: -500
+  incrementYspeed: -50
+  rotationSpeed: 10
+  maxRotationAngle: 25
 --- !u!54 &291463820
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5316,7 +5319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &389864557
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5540,7 +5543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 291463818}
   minIntensity: 0
-  maxIntensity: 400
+  maxIntensity: 20
   intensityExponent: 8
 --- !u!114 &445077970
 MonoBehaviour:
@@ -5577,7 +5580,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.645283, g: 0.09236277, b: 0.09131354, a: 1}
-  m_Intensity: 16.13
+  m_Intensity: 30
   m_Range: 945.1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -6839,7 +6842,7 @@ MonoBehaviour:
   minEmissionColor: {r: 0, g: 0, b: 0, a: 1}
   maxEmissionColor: {r: 0.827451, g: 0.015686275, b: 0.011764706, a: 1}
   minEmissionIntensity: 0
-  maxEmissionIntensity: 4
+  maxEmissionIntensity: 5
   intensityExponent: 2
 --- !u!23 &1499848571
 MeshRenderer:
@@ -6931,7 +6934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1536468736
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12038,8 +12041,8 @@ MonoBehaviour:
   zPosRange:
   - -3.62
   - 1.83
-  initialEnemyCount: 45
-  enemyRoundIncrement: 15
+  initialEnemyCount: 40
+  enemyRoundIncrement: 10
 --- !u!114 &1714060885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12335,7 +12338,7 @@ Transform:
   m_GameObject: {fileID: 1920699800}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.127, y: 1.553, z: 0.03000009}
+  m_LocalPosition: {x: -0.66, y: 1.62, z: 0.03000009}
   m_LocalScale: {x: 1, y: 1.1627908, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -12909,9 +12912,9 @@ SceneRoots:
   - {fileID: 1128285705}
   - {fileID: 330585546}
   - {fileID: 832575519}
+  - {fileID: 2028511605}
   - {fileID: 389864560}
   - {fileID: 1536468739}
-  - {fileID: 2028511605}
   - {fileID: 291463818}
   - {fileID: 1714060883}
   - {fileID: 2031696340}

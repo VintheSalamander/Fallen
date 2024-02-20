@@ -17,12 +17,13 @@ public class LightController : MonoBehaviour
     }
     void Update()
     {
-        float distance = Vector3.Distance(playerTransform.position, transform.position);
+        if(playerTransform){
+            float distance = Vector3.Distance(playerTransform.position, transform.position);
+            float intensityRatio = Mathf.Clamp01(1f - (distance / maxDistance));
+            float intensity = Mathf.Lerp(minIntensity, maxIntensity, Mathf.Pow(intensityRatio, intensityExponent));
+            pointLight.intensity = intensity;
+        }
 
-        float intensityRatio = Mathf.Clamp01(1f - (distance / maxDistance));
-
-        float intensity = Mathf.Lerp(minIntensity, maxIntensity, Mathf.Pow(intensityRatio, intensityExponent));
-
-        pointLight.intensity = intensity;
+        
     }
 }

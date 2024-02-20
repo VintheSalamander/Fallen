@@ -22,13 +22,15 @@ public class EmissionController : MonoBehaviour
 
     void Update()
     {
-        float distance = Vector3.Distance(playerTransform.position, transform.position);
-        float intensityRatio = Mathf.Clamp01(1f - (distance / maxDistance));
-        float intensity = Mathf.Lerp(minEmissionIntensity, maxEmissionIntensity, Mathf.Pow(intensityRatio, intensityExponent));
-        Color emissionColor = Color.Lerp(minEmissionColor, maxEmissionColor, intensityRatio);
+        if(playerTransform){
+            float distance = Vector3.Distance(playerTransform.position, transform.position);
+            float intensityRatio = Mathf.Clamp01(1f - (distance / maxDistance));
+            float intensity = Mathf.Lerp(minEmissionIntensity, maxEmissionIntensity, Mathf.Pow(intensityRatio, intensityExponent));
+            Color emissionColor = Color.Lerp(minEmissionColor, maxEmissionColor, intensityRatio);
 
-        material.SetColor("_EmissionColor", emissionColor * intensity);
+            material.SetColor("_EmissionColor", emissionColor * intensity);
 
-        rendererComponent.material = material;
+            rendererComponent.material = material;
+        }
     }
 }

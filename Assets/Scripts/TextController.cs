@@ -17,7 +17,9 @@ public class TextController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float meters = maxHeight - playerTransform.position.y + GameModeController.GetRound() * maxHeight;
-        textMeshPro.text = "Fallen: " + meters.ToString("F2") + " m";
+        if(playerTransform){
+            float meters = maxHeight - playerTransform.position.y + GameModeController.GetRound() * maxHeight;
+            textMeshPro.text = "Fallen: " + meters.ToString("F2") + " m";
+        }
     }
 }

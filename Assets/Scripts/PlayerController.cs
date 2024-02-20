@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,11 +11,15 @@ public class PlayerController : MonoBehaviour
     public float incrementYspeed= -50f;
     public float rotationSpeed = 10f;
     public float maxRotationAngle = 45f;
+    public int HP = 3;
+    public GameObject explosion;
+    public HealthBar healthBar;
     private Rigidbody rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        healthBar.SetHealth(1f);
         submarine.SetActive(true);
         spaceship.SetActive(false);
     }
@@ -38,8 +43,26 @@ public class PlayerController : MonoBehaviour
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, currentRotation, transform.eulerAngles.z);
     }
 
-    public void Explode(){
-        Debug.Log("Player dead");
+    public void Impact(Collision coll){
+        ContactPoint[] contacts = new ContactPoint[10];
+        int numContacts = coll.GetContacts(contacts);
+        HP -= 1;
+        if(HP > 0){
+            if(HP == 2){
+                healthBar.SetHealth(0.791f);
+            }else if(HP == 1){
+                healthBar.SetHealth(0.59f);
+            }
+            GameObject explosionInstance = Instantiate(explosion, contacts[Random.Range(0, numContacts - 1)].point, Quaternion.identity);
+            explosionInstance.transform.localScale *= 3;
+            StartCoroutine(DestroyExpPS(explosionInstance));
+        }
+        if(HP == 0){
+            healthBar.SetHealth(0.372f);
+            GameObject explosionInstance = Instantiate(explosion, contacts[Random.Range(0, numContacts - 1)].point, Quaternion.identity);
+            explosionInstance.transform.localScale *= 7;
+            Destroy(gameObject);
+        }
     }
 
     public void ChangeShipToDeepSea(){
@@ -56,5 +79,11 @@ public class PlayerController : MonoBehaviour
 
     public void IncreaseYSpeed(){
         ySpeed += incrementYspeed;
+    }
+
+    IEnumerator DestroyExpPS(GameObject explosion){
+        ParticleSystem expPS = explosion.GetComponent<ParticleSystem>();
+        yield return new WaitForSeconds(expPS.main.duration);
+        Destroy(explosion   );
     }
 }

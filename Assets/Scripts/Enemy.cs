@@ -18,7 +18,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     void OnCollisionEnter(Collision coll){
         if(coll.gameObject.CompareTag("Player")){
-            coll.gameObject.GetComponent<PlayerController>().Explode();
+            coll.gameObject.GetComponent<PlayerController>().Impact(coll);
         }
     }
 }

@@ -5316,10 +5316,9 @@ GameObject:
   - component: {fileID: 389864559}
   - component: {fileID: 389864558}
   - component: {fileID: 389864557}
-  - component: {fileID: 389864561}
   m_Layer: 0
   m_Name: DeepSea
-  m_TagString: Untagged
+  m_TagString: End
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -5411,18 +5410,6 @@ Transform:
   - {fileID: 1871308184}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &389864561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389864556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da69c789a61bc6e4cadac9f46fcfbf65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &419941650
 GameObject:
   m_ObjectHideFlags: 0
@@ -7224,10 +7211,9 @@ GameObject:
   - component: {fileID: 1536468738}
   - component: {fileID: 1536468737}
   - component: {fileID: 1536468736}
-  - component: {fileID: 1536468740}
   m_Layer: 0
   m_Name: Space
-  m_TagString: Untagged
+  m_TagString: End
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -7319,18 +7305,6 @@ Transform:
   - {fileID: 419941651}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1536468740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1536468735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da69c789a61bc6e4cadac9f46fcfbf65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1665283059
 GameObject:
   m_ObjectHideFlags: 0

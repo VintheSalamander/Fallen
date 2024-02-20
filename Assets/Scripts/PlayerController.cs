@@ -44,8 +44,6 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Impact(Collision coll){
-        ContactPoint[] contacts = new ContactPoint[10];
-        int numContacts = coll.GetContacts(contacts);
         HP -= 1;
         if(HP > 0){
             if(HP == 2){
@@ -53,15 +51,29 @@ public class PlayerController : MonoBehaviour
             }else if(HP == 1){
                 healthBar.SetHealth(0.59f);
             }
+            ContactPoint[] contacts = new ContactPoint[10];
+            int numContacts = coll.GetContacts(contacts);
             GameObject explosionInstance = Instantiate(explosion, contacts[Random.Range(0, numContacts - 1)].point, Quaternion.identity);
             explosionInstance.transform.localScale *= 3;
             StartCoroutine(DestroyExpPS(explosionInstance));
         }
         if(HP == 0){
-            healthBar.SetHealth(0.372f);
-            GameObject explosionInstance = Instantiate(explosion, contacts[Random.Range(0, numContacts - 1)].point, Quaternion.identity);
-            explosionInstance.transform.localScale *= 13;
-            Destroy(gameObject);
+            Explode(coll);
+        }
+    }
+
+    void Explode(Collision coll){
+        ContactPoint[] contacts = new ContactPoint[10];
+        int numContacts = coll.GetContacts(contacts);
+        healthBar.SetHealth(0.372f);
+        GameObject explosionInstance = Instantiate(explosion, contacts[Random.Range(0, numContacts - 1)].point, Quaternion.identity);
+        explosionInstance.transform.localScale *= 13;
+        Destroy(gameObject);
+    }
+
+    void OnCollisionEnter(Collision coll){
+        if(coll.gameObject.CompareTag("End")){
+            Explode(coll);
         }
     }
 

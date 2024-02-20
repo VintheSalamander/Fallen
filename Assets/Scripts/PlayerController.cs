@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         if(HP == 0){
             healthBar.SetHealth(0.372f);
             GameObject explosionInstance = Instantiate(explosion, contacts[Random.Range(0, numContacts - 1)].point, Quaternion.identity);
-            explosionInstance.transform.localScale *= 7;
+            explosionInstance.transform.localScale *= 13;
             Destroy(gameObject);
         }
     }
